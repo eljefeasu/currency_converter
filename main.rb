@@ -20,9 +20,11 @@ currency_rates = {USD: 1.0,
 puts "#{usd1.amount} #{usd1.currency_code}"
 puts "#{usd2.amount} #{usd2.currency_code}"
 
+puts usd1 == usd3
+puts usd2 == usd3
+
 usd1 - usd2
 usd1 + usd3
-usd1 - yen1
 puts usd1.amount * 2.5
 
 currency_converter = CurrencyConverter.new(currency_rates)

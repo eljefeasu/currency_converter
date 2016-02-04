@@ -4,6 +4,14 @@ class Currency
     @currency_code = currency_code
   end
 
+  def amount
+    @amount
+  end
+
+  def currency_code
+    @currency_code
+  end
+
   def ==(object)
     if @currency_code == object.currency_code && @amount == object.amount
       return true
@@ -16,7 +24,7 @@ class Currency
     if @currency_code == object.currency_code
       puts "#{@amount + object.amount} #{@currency_code}"
     else
-      puts "#{@currency_code} & #{object.currency_code} are not the same currency and therefore cannot be added."
+      DifferentCurrencyCodeError(false)
     end
   end
 
@@ -24,15 +32,11 @@ class Currency
     if @currency_code == object.currency_code
       puts "#{@amount - object.amount} #{@currency_code}"
     else
-      puts "#{@currency_code} & #{object.currency_code} are not the same currency and therefore cannot be subtracted."
+      DifferentCurrencyCodeError(false)
     end
   end
 
-  def amount
-    @amount
-  end
-
-  def currency_code
-    @currency_code
+  def DifferentCurrencyCodeError(value)
+    raise TypeError, 'The currencies are not the same'
   end
 end
