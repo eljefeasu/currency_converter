@@ -12,6 +12,14 @@ class Currency
     end
   end
 
+  def +(object)
+    if @currency_code == object.currency_code
+      puts "#{@amount + object.amount} #{@currency_code}"
+    else
+      puts "#{@currency_code} & #{object.currency_code} are not the same currency and therefore cannot be added."
+    end
+  end
+
   def amount
     @amount
   end
