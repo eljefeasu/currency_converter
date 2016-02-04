@@ -13,3 +13,7 @@ puts "#{usd2.amount} #{usd2.currency_code}"
 usd1 - usd2
 usd1 - usd3
 usd1 - yen1
+puts usd1.amount * 2.5
+
+currency_converter = Currency_Converter.new()
+currency_converter.currency_rates

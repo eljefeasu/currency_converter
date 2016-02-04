@@ -35,5 +35,4 @@ class Currency
   def currency_code
     @currency_code
   end
-
 end
