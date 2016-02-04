@@ -1,6 +1,6 @@
-class Currency_Converter
-  def initialize
-    @currency_rates = {USD: 1.0, EUR: 0.74}
+class CurrencyConverter
+  def initialize(currency_rates)
+    @currency_rates = currency_rates
   end
 
   def currency_rates

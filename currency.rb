@@ -5,7 +5,7 @@ class Currency
   end
 
   def ==(object)
-    if @amount == object.amount && @currency_code == object.currency_code
+    if @currency_code == object.currency_code && @amount == object.amount
       return true
     else
       return false

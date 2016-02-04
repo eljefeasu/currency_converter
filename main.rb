@@ -7,13 +7,23 @@ usd2 = Currency.new(20, "USD")
 usd3 = Currency.new(10, "USD")
 yen1 = Currency.new(10, "YEN")
 
+currency_rates = {USD: 1.0,
+                  EUR: 0.89,
+                  GBP: 0.68,
+                  INR: 67.54,
+                  AUD: 1.39,
+                  CAD: 1.37,
+                  ZAR: 15.89,
+                  NZD: 1.49,
+                  JPY: 116.71}
+
 puts "#{usd1.amount} #{usd1.currency_code}"
 puts "#{usd2.amount} #{usd2.currency_code}"
 
 usd1 - usd2
-usd1 - usd3
+usd1 + usd3
 usd1 - yen1
 puts usd1.amount * 2.5
 
-currency_converter = Currency_Converter.new()
+currency_converter = CurrencyConverter.new(currency_rates)
 currency_converter.currency_rates
