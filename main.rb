@@ -31,7 +31,8 @@ usd4 = usd1 * 4.5
 puts usd4.amount
 puts usd4.currency_code
 
-usd1 + yen1
-
 currency_converter = CurrencyConverter.new(currency_rates)
 currency_converter.currency_rates
+
+converted_currency = currency_converter.convert(Currency.new(1, :USD), :EUR)
+puts "#{converted_currency.amount} #{converted_currency.currency_code}"
