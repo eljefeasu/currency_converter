@@ -7,4 +7,8 @@ class CurrencyConverter
     puts @currency_rates
   end
 
+  def convert (currency, currency_code)
+    
+  end
+
 end

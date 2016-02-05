@@ -24,7 +24,7 @@ class Currency
     if @currency_code == object.currency_code
       puts "#{@amount + object.amount} #{@currency_code}"
     else
-      DifferentCurrencyCodeError(false)
+      raise DifferentCurrencyCodeError
     end
   end
 
@@ -32,15 +32,17 @@ class Currency
     if @currency_code == object.currency_code
       puts "#{@amount - object.amount} #{@currency_code}"
     else
-      DifferentCurrencyCodeError(false)
+      raise DifferentCurrencyCodeError
     end
   end
 
   def *(number)
     return Currency.new((@amount * number), @currency_code)
   end
+end
 
-  def DifferentCurrencyCodeError(value)
-    raise TypeError, 'The currencies are not the same'
+class DifferentCurrencyCodeError < StandardError
+  def initialize(msg='Currencies do not match. Cannot perform operation')
+    super
   end
 end
