@@ -27,5 +27,9 @@ usd1 - usd2
 usd1 + usd3
 puts usd1.amount * 2.5
 
+usd4 = usd1 * 4.5
+puts usd4.amount
+puts usd4.currency_code
+
 currency_converter = CurrencyConverter.new(currency_rates)
 currency_converter.currency_rates

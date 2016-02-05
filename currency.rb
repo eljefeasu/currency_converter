@@ -36,6 +36,10 @@ class Currency
     end
   end
 
+  def *(number)
+    return Currency.new((@amount * number), @currency_code)
+  end
+
   def DifferentCurrencyCodeError(value)
     raise TypeError, 'The currencies are not the same'
   end
