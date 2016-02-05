@@ -1,5 +1,6 @@
 require './currency'
 require './currency_converter'
+require './currency_trader'
 
 
 usd1 = Currency.new(2, :USD)
