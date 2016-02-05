@@ -1,7 +1,18 @@
 class Currency
-  def initialize(amount, currency_code)
-    @amount = amount
-    @currency_code = currency_code
+  def initialize(amount, currency_code="USD")
+    @currency_symbols_hash = {"$" => :USD,
+                              "€" => :EUR,
+                              "£" => :GBP,
+                              "₹" => :INR,
+                              "¥" => :JPN}
+    if @currency_symbols_hash.has_key?(amount.to_s[0])
+      amount[0] = ""
+      @amount = amount.to_f
+      @currency_code = currency_code
+    else
+      @amount = amount.to_f
+      @currency_code = currency_code
+    end
   end
 
   def amount
@@ -22,7 +33,7 @@ class Currency
 
   def +(object)
     if @currency_code == object.currency_code
-      puts "#{@amount + object.amount} #{@currency_code}"
+      return Currency.new((@amount + object.amount), @currency_code)
     else
       raise DifferentCurrencyCodeError
     end
@@ -30,7 +41,7 @@ class Currency
 
   def -(object)
     if @currency_code == object.currency_code
-      puts "#{@amount - object.amount} #{@currency_code}"
+      return Currency.new((@amount - object.amount), @currency_code)
     else
       raise DifferentCurrencyCodeError
     end

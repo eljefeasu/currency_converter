@@ -7,14 +7,14 @@ class CurrencyConverter
     puts @currency_rates
   end
 
-  def convert(currency, currency_code)
-    if @currency_rates.has_key?(currency_code) && @currency_rates.has_key?(currency.currency_code)
-      if currency.amount == :USD
-        converted_amount = currency.amount * (@currency_rates[currency_code].to_f)
+  def convert(object, currency_code)
+    if  @currency_rates.has_key?(object.currency_code) && @currency_rates.has_key?(currency_code)
+      if object.currency_code == :USD
+        converted_amount = object.amount * (@currency_rates[currency_code])
       else
-        converted_amount = @currency_rates[currency_code] / @currency_rates[currency.currency_code]
+        converted_amount = @currency_rates[currency_code] / @currency_rates[object.currency_code]
       end
-      return Currency.new(converted_amount, currency_code)
+      return Currency.new(converted_amount.round(2), currency_code)
     else
       raise UnknownCurrencyCodeError
     end
