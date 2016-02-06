@@ -1,14 +1,14 @@
 class Currency
-  def initialize(amount, currency_code="USD")
+  def initialize(amount, currency_code=:USD)
     @currency_symbols_hash = {"$" => :USD,
                               "€" => :EUR,
                               "£" => :GBP,
                               "₹" => :INR,
                               "¥" => :JPN}
     if @currency_symbols_hash.has_key?(amount.to_s[0])
+      @currency_code = @currency_symbols_hash[amount[0]]
       amount[0] = ""
       @amount = amount.to_f
-      @currency_code = currency_code
     else
       @amount = amount.to_f
       @currency_code = currency_code
