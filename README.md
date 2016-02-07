@@ -1,8 +1,8 @@
 # Currency Converter
 
-### Contains Three Classes
+### Uses three classes to convert currencies
 
-### The Currency Class
+#### The Currency Class
 
 * Created with an amount and a currency code
 * Equals another currency object with the same amount and currency code
@@ -13,13 +13,13 @@
 * Contains a method used to multiply a Fixnum or float to a currency object
 * Has the ability to take a parameter such as "$5.00" and convert into 5 USD
 
-### The CurrencyConverter Class
+#### The CurrencyConverter Class
 
 * Initialized with a Hash of currency codes and conversion rates
 * Can take a Currency object and a requested country code and convert the Currency object into that requested currency
 * Raises an UnknownCurrencyCodeError when you try to convert to a code that isn't within the hash
 
-### The CurrencyTrader Class
+#### The CurrencyTrader Class
 
 * Initialized with two CurrencyConverter objects from two different points in time
 * Contains a method used to return best investment currency over that span of time
