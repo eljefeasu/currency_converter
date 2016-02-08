@@ -6,7 +6,7 @@ require './currency_trader'
 usd1 = Currency.new(2, :USD)
 usd2 = Currency.new(20, :USD)
 usd3 = Currency.new(2, :USD)
-yen1 = Currency.new(10, :JPN)
+jpn1 = Currency.new(10, :JPN)
 eur1 = Currency.new(1, :EUR)
 usd5 = Currency.new("$5.00")
 usd6 = Currency.new(5)
@@ -30,7 +30,7 @@ print "The following are evidence of working currency objects,\nincluding turnin
 puts "usd1: #{usd1.amount} #{usd1.currency_code}"
 puts "usd2: #{usd2.amount} #{usd2.currency_code}"
 puts "usd3: #{usd3.amount} #{usd3.currency_code}"
-puts "usd4: #{yen1.amount} #{yen1.currency_code}"
+puts "jpn1: #{jpn1.amount} #{jpn1.currency_code}"
 puts "eur1: #{eur1.amount} #{eur1.currency_code}"
 puts "usd5: #{usd5.amount} #{usd5.currency_code}"
 puts "usd6: #{usd6.amount} #{usd6.currency_code}"
@@ -75,3 +75,19 @@ currency_trader.best_currency_investment
 
 currency_trader = CurrencyTrader.new(currency_rates_feb15, currency_rates_feb16, eur_hard)
 currency_trader.best_currency_investment
+
+
+
+# puts "Convert 1 USD into Bogus Currency Code:"
+# converted_currency = currency_converter.convert(Currency.new(1, :USD), :JAN)
+# puts "#{converted_currency.amount} #{converted_currency.currency_code}"
+
+# puts "\nAdd usd1 and jpn1 to create error:"
+# usd11 = usd1 + jpn1
+# puts usd11
+# puts "#{usd11.amount} #{usd11.currency_code}"
+
+# puts "\nSubract jpn1 from usd1 to create error:"
+# usd11 = usd1 - jpn1
+# puts usd11
+# puts "#{usd11.amount} #{usd11.currency_code}"
